@@ -31,7 +31,7 @@ void runGame() {
 	
 	int CPU = playCPU();
 
-	if (input == "r" || "p" || "s") {
+	if (input == "r" || input == "p" || input == "s") {
 		if (((inputToInt[input] + 1) % 3) == CPU) {
 			std::cout << "you: " << textChoices[inputToInt[input]] << std::endl;
 			std::cout << "cpu: " << textChoices[CPU] << std::endl;
@@ -47,9 +47,10 @@ void runGame() {
 			std::cout << "cpu: " << textChoices[CPU] << std::endl;
 			std::cout << "its a tie!\n" << std::endl;
 		}
+		endMenu();
 	}
 	else {
 		std::cout << "invalid input\n" << std::endl;
+		runGame();
 	}
-	endMenu();
 }
